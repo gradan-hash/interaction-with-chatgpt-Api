@@ -28,7 +28,7 @@
     .chat-window {
       width: 80%;
       height: 200px;
-      border: 1px solid #ccc;
+      border: 1px solid #f4f4f4;
       margin-bottom: 1rem;
       display: flex;
       justify-content: center;
@@ -50,6 +50,9 @@
         border-radius: 0.5rem;
         border: 1px solid #ccc;
         font-size: 1.2rem;
+        .text {
+          flex-wrap: wrap;
+        }
       }
 
       button {

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./Home.scss";
 import axios from "axios";
 const Home = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    setPrompt(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -14,9 +14,9 @@ const Home = () => {
 
     try {
       const res = await axios.post("http://localhost:2300/api/chat/chat", {
-        inputValue,
+        prompt,
       });
-      console.log(res)
+      console.log(res);
       setResponse(res.data);
     } catch (error) {
       console.log(error);
@@ -37,7 +37,7 @@ const Home = () => {
           <input
             type="text"
             placeholder="Enter your message"
-            value={inputValue}
+            value={prompt}
             onChange={handleInputChange}
           />
           <button type="submit">Send</button>
